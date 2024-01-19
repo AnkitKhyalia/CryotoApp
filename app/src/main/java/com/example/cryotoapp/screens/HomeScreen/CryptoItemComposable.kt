@@ -65,7 +65,8 @@ fun CryptoItem(
                 modifier = Modifier
                     .size(80.dp)
                     .padding(5.dp)
-                    .clip(shape = RoundedCornerShape(10.dp)).background(Color.Transparent),
+                    .clip(shape = RoundedCornerShape(10.dp))
+                    .background(Color.Transparent),
 
                 )
             Column(modifier = Modifier.fillMaxWidth()) {
@@ -73,10 +74,17 @@ fun CryptoItem(
                     Text(text = name, modifier = Modifier.padding(5.dp), fontWeight = FontWeight.Bold, color = Color.Black)
                     Text(text = symbol, modifier = Modifier.padding(5.dp), fontWeight = FontWeight.Light, color = Color.Gray, fontSize = 10.sp)
                 }
-//                Text(text = name, modifier = Modifier.padding(5.dp), fontWeight = FontWeight.Bold)
-                Text(text = "Exchange Rate: $$exchangeRate", modifier = Modifier.padding(5.dp),color= DarkGreen, style = TextStyle(
-                    fontSize = 15.sp
-                ))
+//
+                Row (modifier = Modifier.fillMaxWidth().padding(0.dp,10.dp), horizontalArrangement = Arrangement.SpaceBetween){
+
+                    Text(text = "Exchange Rate:", modifier = Modifier.padding(10.dp,5.dp),color= Color.DarkGray, style = TextStyle(
+                        fontSize = 15.sp
+                    ))
+                    Text(text = "$$exchangeRate", modifier = Modifier.padding(10.dp,5.dp),color= DarkGreen, style = TextStyle(
+                        fontSize = 15.sp
+                    ))
+
+                }
             }
 
 
